@@ -1,8 +1,18 @@
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
+const heartBttn = document.querySelectorAll("like-glyph")
 
-// Your JavaScript code goes here!
+function hideErrorMessage() {
+document.getElementById("modal").hidden = true
+};
+
+heartBttn.forEach(heart => console.log(heart));
+
+    
+
+  
+  
 
 
 
