@@ -8,17 +8,16 @@ document.getElementById("modal").hidden = true
 };
 
   heartBttn.forEach(heart => {
+    //  heart =!heart
     heart.addEventListener("click", function() {
       mimicServerCall()
       .then(resp => {
         heart.innerHTML = FULL_HEART
-       
        })
       .catch(resp => heart.innerHTML = EMPTY_HEART)
   })})
   
   
-
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
