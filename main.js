@@ -3,9 +3,6 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 const heartBttn = document.querySelectorAll(".like-glyph")
 
-function hideErrorMessage() {
-document.getElementById("modal").hidden = true
-};
 
   heartBttn.forEach(heart => {
     //  heart =!heart
@@ -15,6 +12,11 @@ document.getElementById("modal").hidden = true
         heart.innerHTML = FULL_HEART
        })
       .catch(resp => heart.innerHTML = EMPTY_HEART)
+      const showError = document.getElementById("modal")
+      showError.className = ""
+      showError.innerText = resp
+      debugger
+      //setTimeout(function(){ showError() }, 3000);
   })})
   
   
