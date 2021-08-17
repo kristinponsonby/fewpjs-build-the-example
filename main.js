@@ -3,6 +3,11 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 const heartBttn = document.querySelectorAll(".like-glyph")
 
+const colorStates = {
+  "red" : "",
+  "": "red"
+};
+
 
   heartBttn.forEach(heart => {
     //  heart =!heart
@@ -10,14 +15,15 @@ const heartBttn = document.querySelectorAll(".like-glyph")
       mimicServerCall()
       .then(resp => {
         heart.innerHTML = FULL_HEART
+        heart.style.color = colorStates[heart.style.color];
        })
-      .catch(resp => heart.innerHTML = EMPTY_HEART)
-      const showError = document.getElementById("modal")
-      showError.className = ""
-      showError.innerText = resp
-      debugger
-      //setTimeout(function(){ showError() }, 3000);
-  })})
+      .catch(resp => {
+        heart.innerHTML = EMPTY_HEART
+        const showError = document.getElementById("modal")
+        showError.className = ""
+        showError.innerText = resp
+        setTimeout(() =>  modal.className = "hidden", 3000);
+  })})})
   
   
 
